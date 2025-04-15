@@ -1,0 +1,140 @@
+.user-page {
+  padding: 20px;
+}
+
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn {
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.add-btn:hover {
+  background-color: #0056b3;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.form-grid input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.user-list {
+  margin-top: 30px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.user-table th {
+  background-color: #f4f4f4;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #e9e9e9;
+}
+
+.no-user {
+  color: gray;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+.user-item {
+  background: #f9f9f9;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.form-actions {
+  grid-column: span 2;
+  display: flex;
+  gap: 10px;
+}
+
+.cancel-btn {
+  padding: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+}
+
+
+.user-table td button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-table td button:first-child {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.user-table td button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.user-table td button:hover:first-child {
+  background-color: #e0a800;
+}
+
+.user-table td button:hover:last-child {
+  background-color: #c82333;
+}
