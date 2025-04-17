@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import AdminLogin from "./component/AdminLogin";
-import AdminPanel from "./component/AdminPanel";
+import AdminLogin from "./component/js-file/AdminLogin";
+import AdminPanel from "./component/js-file/AdminPanel";
 
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);

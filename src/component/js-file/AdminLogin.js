@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./AdminLogin.css";
+import "../css-file/AdminLogin.css";
 
 const AdminLogin = ({ onLogin }) => {
     const [mobileNumber, setMobileNumber] = useState("");

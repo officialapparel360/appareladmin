@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./css-file/UserPage.css";
+import "../css-file/UserPage.css";
 
 const initialFormState = {
   userName: "",

@@ -131,7 +131,6 @@ body {
 /* Grid Layout */
 .content-grid {
   display: grid;
-  grid-template-columns: 260px 1fr 280px;
   gap: 1.5rem;
   flex: 1;
 }
@@ -177,7 +176,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .content-grid {
     grid-template-columns: 1fr;
   }
@@ -185,7 +184,7 @@ body {
   .content-right {
     display: none;
   }
-}
+} */
 
 /* Optional: move the button visually when collapsed */
 .sidebar.collapsed .toggle-sidebar-btn {
@@ -208,27 +207,4 @@ body {
   color: #2d3a4b;
 }
 
-.overview-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  width: 100%;
-}
 
-.card {
-  flex: 1 1 calc(25% - 1.2rem); /* Adjusted for spacing */
-  min-width: 220px;
-  max-width: 100%;
-}
-
-.card h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #444;
-}
-
-.card p {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #1976d2;
-}

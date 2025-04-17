@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
+    align-items: stretch;
   }
   
   .card {
@@ -35,5 +36,16 @@
     font-size: 24px;
     font-weight: bold;
     color: #007bff;
+  }
+
+  .test-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .test-item {
+    border: 1px solid red;
+    padding: 10px;
+    text-align: center;
   }
   

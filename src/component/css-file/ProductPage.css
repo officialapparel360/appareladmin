@@ -1,135 +1,82 @@
 .product-page {
-    padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    min-height: 100vh;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  h2 {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .add-btn {
-    padding: 10px 16px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    width: 150px;
-    transition: background 0.3s ease;
-  }
-  
-  .add-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 12px;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-    margin-bottom: 20px;
-  }
-  
-  .form-grid input {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-  }
-  
-  .form-actions {
-    grid-column: 1 / -1;
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .submit-btn,
-  .cancel-btn {
-    padding: 10px 18px;
-    font-weight: 500;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .submit-btn {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .submit-btn:hover {
-    background-color: #218838;
-  }
-  
-  .cancel-btn {
-    background-color: #dc3545;
-    color: white;
-  }
-  
-  .cancel-btn:hover {
-    background-color: #c82333;
-  }
-  
-  .product-list {
-    background: white;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
-  }
-  
-  .product-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .product-table th,
-  .product-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-    font-size: 14px;
-  }
-  
-  .product-table th {
-    background-color: #f1f1f1;
-    font-weight: 600;
-    color: #444;
-  }
-  
-  .product-table button {
-    background-color: #ff5c5c;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 13px;
-  }
-  
-  .product-table button:hover {
-    background-color: #e60000;
-  }
-  
-  .no-product {
-    text-align: center;
-    padding: 20px;
-    font-style: italic;
-    color: #777;
-  }
-  
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.add-btn {
+  padding: 10px 16px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 150px;
+  transition: background 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #0056b3;
+}
+
+.product-list {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.product-table th {
+  background-color: #f1f1f1;
+  font-weight: 600;
+  color: #444;
+}
+
+.product-table button {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.product-table button:hover {
+  background-color: #e60000;
+}
+
+.no-product {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #777;
+}

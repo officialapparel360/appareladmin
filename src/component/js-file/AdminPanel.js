@@ -3,7 +3,7 @@ import { FaHome, FaUser, FaBox, FaSignOutAlt, FaBars } from "react-icons/fa";
 import HomePage from "./HomePage";
 import UserPage from "./UserPage";
 import ProductPage from "./ProductPage";
-import "./AdminPanel.css";
+import "../css-file/AdminPanel.css";
 
 const AdminPanel = ({ onLogout, users, addUser, products, addProduct }) => {
   const [activePage, setActivePage] = useState("home");
@@ -57,9 +57,6 @@ const AdminPanel = ({ onLogout, users, addUser, products, addProduct }) => {
       {/* Main Area */}
       <main
         className="main-panel"
-        style={{
-          marginLeft: sidebarCollapsed ? 72 : 240,
-        }}
       >
         <div className="content-grid">
           
