@@ -71,6 +71,7 @@ const AdminLogin = ({ onLogin }) => {
                         <input
                             type="tel"
                             placeholder="Enter your mobile number"
+                            maxLength={10}
                             value={mobileNumber}
                             onChange={(e) => setMobileNumber(e.target.value)}
                             disabled={loading}

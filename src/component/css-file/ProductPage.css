@@ -14,13 +14,13 @@
 
 h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: 34px;
   color: #333;
 }
 
 .add-btn {
   padding: 10px 16px;
-  background-color: #007bff;
+  background-color: #218838;
   border: none;
   color: white;
   border-radius: 8px;
@@ -31,47 +31,7 @@ h2 {
 }
 
 .add-btn:hover {
-  background-color: #0056b3;
-}
-
-.product-list {
-  background: white;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
-}
-
-.product-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.product-table th,
-.product-table td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-  font-size: 14px;
-}
-
-.product-table th {
-  background-color: #f1f1f1;
-  font-weight: 600;
-  color: #444;
-}
-
-.product-table button {
-  background-color: #ff5c5c;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.product-table button:hover {
-  background-color: #e60000;
+  background-color: #668b6e;
 }
 
 .no-product {
@@ -79,4 +39,13 @@ h2 {
   padding: 20px;
   font-style: italic;
   color: #777;
+}
+
+.product-header {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  justify-content: space-between; /* or center, or flex-start */
+  align-items: center;            /* vertical alignment */
 }

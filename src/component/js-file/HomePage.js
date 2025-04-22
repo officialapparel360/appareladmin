@@ -17,7 +17,7 @@ const HomePage = () => {
     try {
       const [productRes, userRes] = await Promise.allSettled([
         fetch("http://apparels360.in/api/Product/GetProductList"),
-        fetch("http://apparels360.in/api/Account/GetEmployeeUsers")
+        fetch("http://apparels360.in/api/Account/GetAll")
       ]);
 
       if (productRes.status === "fulfilled" && productRes.value.ok) {
@@ -29,7 +29,7 @@ const HomePage = () => {
       }
 
       if (userRes.status === "fulfilled" && userRes.value.ok) {
-        userData = userRes.value;
+        userData = await userRes.value.json();
 
       } else {
         console.error("User API failed");
@@ -37,7 +37,7 @@ const HomePage = () => {
 
       setStats({
         totalProducts: productData?.data?.length ?? 0,
-        totalUsers: userData?.length ?? 0,
+        totalUsers: userData?.data?.length ?? 0,
       });
     } catch (err) {
       console.error("Failed to fetch dashboard stats", err);
@@ -53,7 +53,7 @@ const HomePage = () => {
           <p>{stats.totalProducts}</p>
         </div>
         <div className="card">
-          <h4>👥 Total Users</h4>
+          <h4>👥 Total Employee</h4>
           <p>{stats.totalUsers}</p>
         </div>
       </div>

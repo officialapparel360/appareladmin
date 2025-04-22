@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaHome, FaUser, FaBox, FaSignOutAlt, FaBars } from "react-icons/fa";
 import HomePage from "./HomePage";
-import UserPage from "./UserPage";
+import EmployeePage from "./Employee/EmployeePage.jsx";
 import ProductPage from "./ProductPage";
 import "../css-file/AdminPanel.css";
 
@@ -26,7 +26,7 @@ const AdminPanel = ({ onLogout, users, addUser, products, addProduct }) => {
         </button>
         <button onClick={() => setActivePage("users")}>
           <FaUser />
-          <span>Users</span>
+          <span>Employee</span>
         </button>
         <button onClick={() => setActivePage("products")}>
           <FaBox />
@@ -45,7 +45,6 @@ const AdminPanel = ({ onLogout, users, addUser, products, addProduct }) => {
         </div>
       </aside>
 
-      {/* Toggle Button */}
       <div
         className="toggle-sidebar-btn"
         onClick={toggleSidebar}
@@ -54,7 +53,6 @@ const AdminPanel = ({ onLogout, users, addUser, products, addProduct }) => {
         <FaBars />
       </div>
 
-      {/* Main Area */}
       <main
         className="main-panel"
       >
@@ -63,7 +61,7 @@ const AdminPanel = ({ onLogout, users, addUser, products, addProduct }) => {
           <section className="content-center">
             {activePage === "home" && <HomePage />}
             {activePage === "users" && (
-              <UserPage users={users} onAddUser={addUser} />
+              <EmployeePage users={users} onAddUser={addUser} />
             )}
             {activePage === "products" && (
               <ProductPage products={products} onAddProduct={addProduct} />
