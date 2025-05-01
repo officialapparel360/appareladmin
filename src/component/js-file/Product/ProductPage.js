@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "../css-file/ProductPage.css";
+import "../../css-file/ProductPage.css";
 import AddProductModal from "./AddProductPage";
-import ProductList from "./Product/ProductList";
+import ProductList from "./ProductList";
 
 const ProductPage = () => {
     const [products, setProducts] = useState([]);
@@ -17,11 +17,17 @@ const ProductPage = () => {
     };
 
     const handleDelete = async (id) => {
-        if (!window.confirm("Are you sure you want to delete this product?")) return;
+        if (!window.confirm("⚠️ Warning:\n\nOnce this product is deleted, all associated data will be permanently lost and cannot be recovered.\n\nAre you sure you want to delete this product?")) return;
 
         try {
-            await fetch(`http://apparels360.in/api/Product/Delete?id=${id}`, {
-                method: "DELETE",
+            await fetch("http://apparels360.in/api/Product/Delete", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id: id
+                })
             });
             fetchProducts();
         } catch (err) {

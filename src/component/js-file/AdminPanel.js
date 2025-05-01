@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { FaHome, FaUser, FaBox, FaSignOutAlt, FaBars } from "react-icons/fa";
+import { FaHome, FaUser, FaBox, FaSignOutAlt, FaBars,FaMobile } from "react-icons/fa";
 import HomePage from "./HomePage";
 import EmployeePage from "./Employee/EmployeePage.jsx";
-import ProductPage from "./ProductPage";
+import ProductPage from "./Product/ProductPage.js";
 import "../css-file/AdminPanel.css";
+import CustomerList from "./App Customer/CustomerList.jsx";
 
 const AdminPanel = ({ onLogout, users, addUser, products, addProduct }) => {
   const [activePage, setActivePage] = useState("home");
@@ -31,6 +32,10 @@ const AdminPanel = ({ onLogout, users, addUser, products, addProduct }) => {
         <button onClick={() => setActivePage("products")}>
           <FaBox />
           <span>Products</span>
+        </button>
+        <button onClick={() => setActivePage("appCustomer")}>
+          <FaMobile />
+          <span>App Customer</span>
         </button>
         <div className="sidebar-footer">
           <button
@@ -66,6 +71,11 @@ const AdminPanel = ({ onLogout, users, addUser, products, addProduct }) => {
             {activePage === "products" && (
               <ProductPage products={products} onAddProduct={addProduct} />
             )}
+            {activePage === "appCustomer" && (
+              <CustomerList/>
+            )}
+
+
           </section>
          
         </div>

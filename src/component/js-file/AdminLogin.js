@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import "../css-file/AdminLogin.css";
 
 const AdminLogin = ({ onLogin }) => {
-    const [mobileNumber, setMobileNumber] = useState("");
+    const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
-    const isMobileInvalid = () => {
-        return mobileNumber.length > 10 && !/^[6-9]\d{9}$/.test(mobileNumber);
-    };
+    // const isMobileInvalid = () => {
+    //     return mobileNumber.length > 10 && !/^[6-9]\d{9}$/.test(mobileNumber);
+    // };
 
     const validateInputs = () => {
-        if (!/^[6-9]\d{9}$/.test(mobileNumber)) {
-            setError("Enter a valid 10-digit mobile number.");
+        if (!userName.trim()) {
+            setError("Username cannnot be empty");
             return false;
         }
         if (!password.trim()) {
@@ -36,7 +36,7 @@ const AdminLogin = ({ onLogin }) => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     userId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                    mobileNo: mobileNumber,
+                    userName: userName,
                     password: password,
                     roleId: 0,
                     ipAddress: "127.0.0.1",
@@ -67,18 +67,16 @@ const AdminLogin = ({ onLogin }) => {
                 {error && <p className="error-text">{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
-                        <label>Mobile Number</label>
+                        <label>User name</label>
                         <input
-                            type="tel"
-                            placeholder="Enter your mobile number"
-                            maxLength={10}
-                            value={mobileNumber}
-                            onChange={(e) => setMobileNumber(e.target.value)}
+                            placeholder="Enter username"
+                            value={userName}
+                            onChange={(e) => setUserName(e.target.value)}
                             disabled={loading}
                         />
-                        {isMobileInvalid() && (
+                        {/* {isMobileInvalid() && (
                             <p className="field-error">Invalid mobile number</p>
-                        )}
+                        )} */}
                     </div>
 
                     <div className="input-group password-group">

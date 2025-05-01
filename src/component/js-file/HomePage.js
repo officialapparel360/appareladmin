@@ -5,6 +5,7 @@ const HomePage = () => {
   const [stats, setStats] = useState({
     totalProducts: 0,
     totalUsers: 0,
+    totalCustomers:0
   });
 
   useEffect(() => {
@@ -14,10 +15,12 @@ const HomePage = () => {
   const fetchStats = async () => {
     var productData;
     var userData;
+    var customerData;
     try {
-      const [productRes, userRes] = await Promise.allSettled([
+      const [productRes, userRes, customerRes] = await Promise.allSettled([
         fetch("http://apparels360.in/api/Product/GetProductList"),
-        fetch("http://apparels360.in/api/Account/GetAll")
+        fetch("http://apparels360.in/api/Account/GetAll"),
+        fetch("http://apparels360.in/api/Account/GetAllCustomer")
       ]);
 
       if (productRes.status === "fulfilled" && productRes.value.ok) {
@@ -35,9 +38,17 @@ const HomePage = () => {
         console.error("User API failed");
       }
 
+      if (customerRes.status === "fulfilled" && customerRes.value.ok) {
+        customerData = await customerRes.value.json();
+
+      } else {
+        console.error("User API failed");
+      }
+
       setStats({
         totalProducts: productData?.data?.length ?? 0,
         totalUsers: userData?.data?.length ?? 0,
+        totalCustomers:customerData?.data?.length ??0
       });
     } catch (err) {
       console.error("Failed to fetch dashboard stats", err);
@@ -55,6 +66,10 @@ const HomePage = () => {
         <div className="card">
           <h4>👥 Total Employee</h4>
           <p>{stats.totalUsers}</p>
+        </div>
+        <div className="card">
+          <h4>👥 Total App Customer</h4>
+          <p>{stats.totalCustomers}</p>
         </div>
       </div>
     </div>

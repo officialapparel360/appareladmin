@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css-file/AddProduct.css";
+import "../../css-file/AddProduct.css";
 
 const AddProductModal = ({ onClose, onSuccess }) => {
   const [form, setForm] = useState({
@@ -78,8 +78,15 @@ const AddProductModal = ({ onClose, onSuccess }) => {
           ))}
 
           <div>
-            <label>Upload Image</label>
-            <input type="file" onChange={handleFileChange} accept="image/*" />
+            <input
+              type="file"
+              name="Files"
+              multiple
+              onChange={handleFileChange}
+            />
+            <button type="submit">Upload Images</button>
+            
+            {/* <input type="file" onChange={handleFileChange} accept="image/*" /> */}
           </div>
 
           <label>

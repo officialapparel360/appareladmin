@@ -3,12 +3,8 @@ import { useState, useEffect } from "react";
 const initialFormState = {
   userName: "",
   mobileNo: "",
-  password: "",
   name: "",
   emailId: "",
-  adharCardNo: "",
-  dob: "",
-  role: "",
 };
 
 export function useEmployeePageLogic() {
@@ -36,7 +32,18 @@ export function useEmployeePageLogic() {
   };
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    if (
+      name === "userID" ||
+      name === "roleId" ||
+      name === "userName" ||
+      name === "mobileNo" ||
+      name === "name" ||
+      name === "emailId" ||
+      name === "id"
+    ) {
+      setForm({ ...form, [name]: value });
+    }
   };
 
   const handleAddUserClick = () => {
@@ -59,25 +66,33 @@ export function useEmployeePageLogic() {
     setEditingUserId(user.userID);
     setShowForm(true);
     setisUserEditting(true);
-
   };
 
   const handleDelete = async (userID) => {
-    if (window.confirm("Delete this employee?")) {
-      setUsers((prev) => prev.filter((u) => u.userID !== userID));
-    }
+    if (!window.confirm("⚠️ Warning: Are you sure you want to delete this Employee?")) return;
+
+        try {
+            await fetch("http://apparels360.in/api/Account/Delete", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id: userID
+                })
+            });
+            fetchUsers();
+        } catch (err) {
+            console.error("Delete failed", err);
+        }
   };
 
   const validateForm = () => {
     const errors = [];
     if (!form.userName) errors.push("Username is required");
     if (!/^\d{10}$/.test(form.mobileNo)) errors.push("Mobile must be 10 digits");
-    if (!form.password || form.password.length < 6) errors.push("Password too short");
     if (!form.name) errors.push("Name is required");
     if (!form.emailId || !/^\S+@\S+\.\S+$/.test(form.emailId)) errors.push("Email is invalid");
-    if (!form.adharCardNo || form.adharCardNo.length !== 12) errors.push("Aadhar must be 12 digits");
-    if (!form.dob) errors.push("DOB is required");
-    if (!form.role) errors.push("Role is required");
     return errors;
   };
 
@@ -92,7 +107,7 @@ export function useEmployeePageLogic() {
       createdOn: new Date().toISOString(),
       modifiedOn: new Date().toISOString(),
       userID: editingUserId || crypto.randomUUID(),
-      roleId: parseInt(form.role),
+      roleID: parseInt(form.roleID),
       ...form,
       createdByIP: "127.0.0.1",
     };
@@ -113,6 +128,7 @@ export function useEmployeePageLogic() {
       if (response.ok) {
         alert("Saved successfully");
         setForm(initialFormState);
+        setisUserEditting(false)
         setShowForm(false);
         setEditingUserId(null);
         fetchUsers();

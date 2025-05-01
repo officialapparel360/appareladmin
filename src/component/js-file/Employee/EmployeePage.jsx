@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css-file/UserPage.css";
+import "../../css-file/EmployeePage.css";
 import { useEmployeePageLogic } from "./useEmployeePageLogic";
 import EmployeeForm from "./EmployeeForm";
 import EmployeeList from "./EmployeeList";

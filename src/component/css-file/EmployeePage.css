@@ -15,7 +15,7 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  width: 120px;
+  width: 140px;
 }
 
 .add-btn:hover {
@@ -24,7 +24,7 @@
 
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 12px;
   margin: 20px 0;
 }
@@ -43,6 +43,7 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  width: 100px;
 }
 
 .submit-btn:hover {
@@ -94,9 +95,10 @@
 }
 
 .form-actions {
-  grid-column: span 2;
   display: flex;
-  gap: 10px;
+  grid-column: span 2;
+  gap: 0.5rem;
+  justify-content: flex-end;
 }
 
 .cancel-btn {
@@ -106,6 +108,7 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  width: 100px;
 }
 
 .cancel-btn:hover {
